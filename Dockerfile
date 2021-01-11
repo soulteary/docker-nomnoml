@@ -6,12 +6,12 @@ SHELL ["/bin/bash", "-c"]
 RUN wget https://github.com/skanaar/nomnoml/archive/v${NOMNOML_VERSION}.tar.gz -O ${NOMNOML_VERSION}.tar.gz && \
     tar zxvf ${NOMNOML_VERSION}.tar.gz && rm -rf ${NOMNOML_VERSION}.tar.gz && \
     cd nomnoml-${NOMNOML_VERSION} && npm install && npm run build
-RUN mkdir -p /app/njs-src/ && cd /app/njs-src/ && \
+RUN mkdir -p /app/njs/ && cd /app/njs/ && \
     wget https://raw.githubusercontent.com/soulteary/graphre/webpack-es5/dist/graphre.es5.js -O graphre.js && \
     wget https://raw.githubusercontent.com/soulteary/nomnoml/njs-es5/dist/nomnoml.es5.js -O nomnoml.js && \
     wget https://raw.githubusercontent.com/soulteary/docker-nomnoml/main/src/api.js -O api.js && \
-    mkdir -p /app/njs/ && cat graphre.js nomnoml.js api.js > /app/njs/image.js && rm /app/njs-src && \
-    wget https://raw.githubusercontent.com/soulteary/docker-nomnoml/main/nginx.conf -O /app/njs/nginx.conf
+    cat graphre.js nomnoml.js api.js > image.js && \
+    wget https://raw.githubusercontent.com/soulteary/docker-nomnoml/main/nginx.conf -O nginx.conf
 
 FROM nginx:1.19.6-alpine
 ENV NOMNOML_VERSION 1.3.1
