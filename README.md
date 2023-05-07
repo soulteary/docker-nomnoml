@@ -1,12 +1,16 @@
 # Docker Nomnoml
 
-> Dockerized Nomnoml by Nginx And NJS.
+> Dockerized Nomnoml by Nginx 1.24.0 And NJS.
 
 Docker Nomnoml is a simple but elegant self-hosted UML Generator & UML Sharing solution.
 
 ## usage
 
 ```bash
+# get the docker image as your like
+docker pull soulteary/nomnoml
+docker pull soulteary/nomnoml:njs
+# run the nomnoml one-click
 docker run --rm -it -p 8080:80 soulteary/nomnoml
 ```
 
