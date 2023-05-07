@@ -1,5 +1,7 @@
 # Docker Nomnoml
 
+[![Docker Image](https://img.shields.io/docker/pulls/soulteary/nomnoml.svg)](https://hub.docker.com/r/soulteary/nomnoml)
+
 > Dockerized Nomnoml by Nginx 1.24.0 And NJS.
 
 Docker Nomnoml is a simple but elegant self-hosted UML Generator & UML Sharing solution.
